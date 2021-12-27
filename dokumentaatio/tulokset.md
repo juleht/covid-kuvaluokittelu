@@ -14,7 +14,7 @@ Mallin loss-funktioksi valitaan ristientropia (cross-entropy), joka määrittä�
 
 
 ### Tulokset
-Mallin accuracy ~ 0.37, joka ei ole erityisen hyvä. Accuracy funktioiden kehityksen plottaaminen jokaisen iteraation jälkeen toisaalta näyttää, että malli ei ole kovin hyvä. Precision arvo: kuinka monta prosenttia kuvista malli luokittelee oikein. Recall arvo: kuinka monta prosenttia kaikista luokan kuvista malli tunnisti
+Mallin accuracy ~ 0.37, joka ei ole erityisen hyvä. Accuracy funktioiden kehityksen plottaaminen jokaisen iteraation jälkeen näyttää, että malli ei ole kovin hyvä. Precision arvo: kuinka monta prosenttia kuvista malli luokittelee oikein. Recall arvo: kuinka monta prosenttia kaikista luokan kuvista malli tunnisti
 F1 arvo: painotettu keskiarvo precision ja recall arvoista kuvastaa koko mallin ennuste kykyä hyvin, silloin kun ainesto ei ole tasa-painoinen, mitä lähempänä 1 sen parempi malli on.
 
 ![kuva lossfunktiosta](/kuvat/classification.png)
