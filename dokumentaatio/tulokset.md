@@ -5,7 +5,7 @@ Kuva-aineisto on tarkoitus saattaa neuroverkolle sopivasti luokiteltuun muotoon,
 
 
 ### Malli
-Projektiin valitaan Sequential malli, joka mahdollistaa neuroverkon kokoamisen kerros kerrokselta. Kuva-aineistoa käsitellään Convotional Neural Networkilla (CNN). Mallin input-kerroksen muodon tulee vastata kuvia ja niiden väriskaalaa. Convotional 2D kerroksissä määritellään filter arvo ja filterille korkeus ja leveys. Filteri määrittää sen kuinka monia muotoja kuvasta halutaan tallentaa. Stride parametri määrittään sen kuinka monen pikselin yli filteri liikkuu. Pooling-kerrokset on tapa vähentää kuvien ulottuvuuksia, joka vähentää ylisovittamista ja neuroverkon kerroksien kokoa. Flatten() funktio muuttaa kuvat yhdeksi vektoriksi. Mallin output-kerroksen tulee olla kategorinenvektori todennäköisyyksistä softmax aktivaatiofunktio tuottaa vektorin.
+Projektiin valitaan Sequential() malli, joka mahdollistaa neuroverkon kokoamisen kerros kerrokselta. Kuva-aineistoa käsitellään Convotional Neural Networkilla (CNN). Mallin input-kerroksen muodon tulee vastata kuvia ja niiden väriskaalaa. Convotional 2D kerroksissä määritellään filter-arvo ja filterille korkeus ja leveys. Filteri määrittää sen kuinka monia eri muotoja kuvasta tallennetaan seuraavalle kerrokselle. Stride parametri määrittään sen kuinka monen pikselin yli filteri liikkuu. Pooling-kerrokset vähentävät kuvien ulottuvuuksia, joka vähentää ylisovittamista ja neuroverkon kerroksien kokoa. Flatten() funktio muuttaa kuvat yhdeksi vektoriksi. Mallin output-kerros on kategorinenvektori eri kuvien todennäköisyyksistä softmax aktivaatiofunktio tuottaa vektorin.
 
 
 
@@ -14,8 +14,8 @@ Mallin loss-funktioksi valitaan ristientropia (cross-entropy), joka määrittä�
 
 
 ### Tulokset
-Mallin accuracy ~ 0.83, joka on kohtalaisen kaukana nollasta ja mallin AUC on ~0,94, joka on hyvä. Loss funktioiden kehityksen plottaaminen jokaisen kierroksen jälkeen toisaalta näyttää, että malli ei ole kovin hyvä.Precision arvo: kuinka monta prosenttia kuvista malli luokittelee oikein.Precision arvo: kuinka monta prosenttia kuvista malli ei luokittele positiivisiksi, vaikka ovat oikeasti negatiivisia. Recall arvo: kuinka monta prosenttia kaikista luokan kuvista malli tunnisti
-F1 arvo: painotettu keskiarvo precision ja recall arvoista kuvastaa koko mallin ennuste kykyä, mitä lähempänä 1 sen parempi malli on.
+Mallin accuracy ~ 0.37, joka ei ole erityisen hyvä. Accuracy funktioiden kehityksen plottaaminen jokaisen iteraation jälkeen toisaalta näyttää, että malli ei ole kovin hyvä. Precision arvo: kuinka monta prosenttia kuvista malli luokittelee oikein. Recall arvo: kuinka monta prosenttia kaikista luokan kuvista malli tunnisti
+F1 arvo: painotettu keskiarvo precision ja recall arvoista kuvastaa koko mallin ennuste kykyä hyvin, silloin kun ainesto ei ole tasa-painoinen, mitä lähempänä 1 sen parempi malli on.
 
 ![kuva lossfunktiosta](/kuvat/classification.png)
 
@@ -23,4 +23,4 @@ F1 arvo: painotettu keskiarvo precision ja recall arvoista kuvastaa koko mallin 
 ![kuva classificaatio tablesta](/kuvat/lossfunction.png)
 
 ### Mallin ennustettavuuden parantaminen
-Malliin hyperparametreja muokattiin manuaalisesti. Ensin yrittämällä lisätä oppimismäärä, tämä paransi mallin ennustettavuutta.oppimisnopeuden nostaminen ei lisännyt mallin ennustettavuutta.Malliin yritettiin myös lisätä kerroksia, mutta mallin tarkkuus laski tästä.
+Malliin hyperparametreja muokattiin manuaalisesti. Ensin yrittämällä lisätä mallin oppimismäärää nostamalla iteraatiokierroksi, tämä paransi mallin ennustettavuutta. Oppimisnopeuden nostaminen ei lisännyt mallin ennustettavuutta. Malliin yritettiin myös lisätä kerroksia, mutta malli ei lisäkerroksilla parantunut.
